@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Star, Users, Clock, Globe, Heart, Share2, ChevronDown, ChevronUp, Play, Lock } from 'lucide-react';
+import course1 from './../assets/course1.jpg';
 
 const CourseDetail = () => {
     const [activeTab, setActiveTab] = useState('overview');
@@ -140,7 +141,12 @@ const CourseDetail = () => {
 
                         {/* Course Preview Image */}
                         <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl shadow-blue-200/50">
-                            <div style={{ backgroundImage: courseData.image }} className="w-full h-full"></div>
+                            <img
+                                src={course1}
+                                alt="Course Preview"
+                                className="w-full h-full object-cover"
+                            />
+                            <div className="absolute inset-0 bg-black/20"></div>
                             <button className="absolute inset-0 flex items-center justify-center hover:bg-black/30 transition-all duration-300">
                                 <div className="w-16 h-16 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-lg hover:scale-110 transition-transform cursor-pointer">
                                     <Play className="w-6 h-6 text-blue-600 ml-1" />

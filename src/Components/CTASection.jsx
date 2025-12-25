@@ -1,156 +1,160 @@
-import React from 'react';
-import { ArrowRight, BookOpen, Users, Award, Zap, CheckCircle } from 'lucide-react';
+import { ArrowRight, BookOpen, Users, Award, Zap, CheckCircle, Sparkles, Target } from 'lucide-react';
+import course1 from './../assets/course5.jpg';
 
 const CTASection = () => {
     return (
-        <section className="py-16 sm:py-20 md:py-28 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Split Layout CTA */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
-                    {/* Left Side - Student Path */}
-                    <div className="relative overflow-hidden rounded-3xl p-12 sm:p-16 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 shadow-2xl shadow-blue-600/50">
-                        {/* Decorative Elements */}
-                        <div className="absolute -top-32 -right-32 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
-                        <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
+        <section className="relative py-16 sm:py-20 md:py-28 overflow-hidden">
+            <div className="fixed inset-0 -z-10 w-full h-screen">
+                <img
+                    src={course1}
+                    alt="Background"
+                    className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-blue-900/80 via-purple-900/75 to-black/70"></div>
+            </div>
 
-                        <div className="relative z-10 flex flex-col h-full">
-                            {/* Icon */}
-                            <div className="w-14 h-14 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                                <BookOpen className="w-8 h-8 text-white" />
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch mb-16">
+                    <div className="group relative overflow-hidden rounded-3xl shadow-2xl shadow-blue-600/50 hover:shadow-blue-600/70 transition-all duration-300 backdrop-blur-sm">
+                        <div className="absolute inset-0 bg-white/10 border border-white/20"></div>
+
+                        <div className="relative z-10 p-12 sm:p-16 flex flex-col h-full">
+                            <div className="flex items-center gap-2 mb-6 w-fit">
+                                <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center">
+                                    <Sparkles className="w-6 h-6 text-white" />
+                                </div>
+                                <span className="text-sm font-bold text-white/90 uppercase tracking-wider">For Students</span>
                             </div>
 
-                            {/* Content */}
-                            <h3 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-                                Start Learning Today
+                            <h3 className="text-4xl sm:text-5xl font-bold text-white mb-4 leading-tight">
+                                Start Your Learning Journey
                             </h3>
-                            <p className="text-blue-100 text-lg mb-8 leading-relaxed">
-                                Unlock your potential with expert-led courses designed for learners at every level. Master in-demand skills and advance your career.
+                            <p className="text-white/80 text-lg mb-8 leading-relaxed max-w-md">
+                                Master in-demand skills with expert-led courses designed for learners at every level. Advance your career today.
                             </p>
 
-                            {/* Features List */}
-                            <div className="space-y-3 mb-8 flex-grow">
-                                <div className="flex items-center gap-3">
-                                    <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
-                                    <span className="text-blue-50">500+ Courses Available</span>
+                            <div className="space-y-4 mb-8 flex-grow">
+                                <div className="flex items-center gap-3 group/item">
+                                    <div className="w-6 h-6 rounded-full bg-green-400/90 flex items-center justify-center flex-shrink-0">
+                                        <CheckCircle className="w-4 h-4 text-white" />
+                                    </div>
+                                    <span className="text-white/90 font-medium group-hover/item:translate-x-1 transition-transform">500+ Expert-Curated Courses</span>
                                 </div>
-                                <div className="flex items-center gap-3">
-                                    <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
-                                    <span className="text-blue-50">Learn at Your Own Pace</span>
+                                <div className="flex items-center gap-3 group/item">
+                                    <div className="w-6 h-6 rounded-full bg-green-400/90 flex items-center justify-center flex-shrink-0">
+                                        <CheckCircle className="w-4 h-4 text-white" />
+                                    </div>
+                                    <span className="text-white/90 font-medium group-hover/item:translate-x-1 transition-transform">Lifetime Access & Updates</span>
                                 </div>
-                                <div className="flex items-center gap-3">
-                                    <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
-                                    <span className="text-blue-50">Lifetime Access to Materials</span>
+                                <div className="flex items-center gap-3 group/item">
+                                    <div className="w-6 h-6 rounded-full bg-green-400/90 flex items-center justify-center flex-shrink-0">
+                                        <CheckCircle className="w-4 h-4 text-white" />
+                                    </div>
+                                    <span className="text-white/90 font-medium group-hover/item:translate-x-1 transition-transform">Recognized Certificates</span>
                                 </div>
-                                <div className="flex items-center gap-3">
-                                    <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
-                                    <span className="text-blue-50">Industry-Recognized Certificates</span>
+                                <div className="flex items-center gap-3 group/item">
+                                    <div className="w-6 h-6 rounded-full bg-green-400/90 flex items-center justify-center flex-shrink-0">
+                                        <CheckCircle className="w-4 h-4 text-white" />
+                                    </div>
+                                    <span className="text-white/90 font-medium group-hover/item:translate-x-1 transition-transform">Active Learning Community</span>
                                 </div>
                             </div>
 
-                            {/* CTA Button */}
-                            <button className="group/btn w-full flex items-center justify-center gap-2 px-8 py-4 bg-white text-blue-600 font-bold rounded-xl hover:bg-blue-50 shadow-xl shadow-gray-900/20 transition-all duration-300 hover:scale-105">
-                                Explore Courses
+                            <button className="group/btn w-full flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-white to-blue-100 hover:from-blue-50 hover:to-white text-blue-600 font-bold rounded-xl shadow-xl shadow-gray-900/40 transition-all duration-300 hover:scale-105 mb-6">
+                                Explore 500+ Courses
                                 <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
                             </button>
-
-                            {/* Stats */}
-                            <div className="mt-8 pt-8 border-t border-white/20">
-                                <div className="text-center">
-                                    <p className="text-3xl font-bold text-white">50K+</p>
-                                    <p className="text-blue-200 text-sm mt-1">Active Learners</p>
-                                </div>
-                            </div>
                         </div>
                     </div>
 
                     {/* Right Side - Instructor Path */}
-                    <div className="relative overflow-hidden rounded-3xl p-12 sm:p-16 bg-gradient-to-br from-purple-600 via-purple-700 to-purple-900 shadow-2xl shadow-purple-600/50">
-                        {/* Decorative Elements */}
-                        <div className="absolute -top-32 -right-32 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
-                        <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl"></div>
+                    <div className="group relative overflow-hidden rounded-3xl shadow-2xl shadow-purple-600/50 hover:shadow-purple-600/70 transition-all duration-300 backdrop-blur-sm">
+                        <div className="absolute inset-0 bg-white/10 border border-white/20"></div>
 
-                        <div className="relative z-10 flex flex-col h-full">
-                            {/* Icon */}
-                            <div className="w-14 h-14 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                                <Award className="w-8 h-8 text-white" />
+                        <div className="relative z-10 p-12 sm:p-16 flex flex-col h-full">
+                            <div className="flex items-center gap-2 mb-6 w-fit">
+                                <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center">
+                                    <Target className="w-6 h-6 text-white" />
+                                </div>
+                                <span className="text-sm font-bold text-white/90 uppercase tracking-wider">For Instructors</span>
                             </div>
 
-                            {/* Content */}
-                            <h3 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-                                Become an Instructor
+                            <h3 className="text-4xl sm:text-5xl font-bold text-white mb-4 leading-tight">
+                                Share Your Expertise
                             </h3>
-                            <p className="text-purple-100 text-lg mb-8 leading-relaxed">
-                                Share your expertise with thousands of learners worldwide. Build a sustainable income while making a real impact on education.
+                            <p className="text-white/80 text-lg mb-8 leading-relaxed max-w-md">
+                                Build a sustainable income while making a real impact. Reach thousands of eager learners worldwide.
                             </p>
 
-                            {/* Features List */}
-                            <div className="space-y-3 mb-8 flex-grow">
-                                <div className="flex items-center gap-3">
-                                    <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
-                                    <span className="text-purple-50">Flexible Teaching Schedule</span>
+                            <div className="space-y-4 mb-8 flex-grow">
+                                <div className="flex items-center gap-3 group/item">
+                                    <div className="w-6 h-6 rounded-full bg-green-400/90 flex items-center justify-center flex-shrink-0">
+                                        <CheckCircle className="w-4 h-4 text-white" />
+                                    </div>
+                                    <span className="text-white/90 font-medium group-hover/item:translate-x-1 transition-transform">Flexible Teaching Schedule</span>
                                 </div>
-                                <div className="flex items-center gap-3">
-                                    <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
-                                    <span className="text-purple-50">High Earning Potential</span>
+                                <div className="flex items-center gap-3 group/item">
+                                    <div className="w-6 h-6 rounded-full bg-green-400/90 flex items-center justify-center flex-shrink-0">
+                                        <CheckCircle className="w-4 h-4 text-white" />
+                                    </div>
+                                    <span className="text-white/90 font-medium group-hover/item:translate-x-1 transition-transform">Competitive Revenue Share</span>
                                 </div>
-                                <div className="flex items-center gap-3">
-                                    <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
-                                    <span className="text-purple-50">Marketing & Promotion Support</span>
+                                <div className="flex items-center gap-3 group/item">
+                                    <div className="w-6 h-6 rounded-full bg-green-400/90 flex items-center justify-center flex-shrink-0">
+                                        <CheckCircle className="w-4 h-4 text-white" />
+                                    </div>
+                                    <span className="text-white/90 font-medium group-hover/item:translate-x-1 transition-transform">Marketing & Promotion Support</span>
                                 </div>
-                                <div className="flex items-center gap-3">
-                                    <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
-                                    <span className="text-purple-50">24/7 Instructor Support</span>
+                                <div className="flex items-center gap-3 group/item">
+                                    <div className="w-6 h-6 rounded-full bg-green-400/90 flex items-center justify-center flex-shrink-0">
+                                        <CheckCircle className="w-4 h-4 text-white" />
+                                    </div>
+                                    <span className="text-white/90 font-medium group-hover/item:translate-x-1 transition-transform">24/7 Instructor Support</span>
                                 </div>
                             </div>
 
-                            {/* CTA Button */}
-                            <button className="group/btn w-full flex items-center justify-center gap-2 px-8 py-4 bg-white text-purple-600 font-bold rounded-xl hover:bg-purple-50 shadow-xl shadow-gray-900/20 transition-all duration-300 hover:scale-105">
-                                Start Teaching
+                            <button className="group/btn w-full flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-white to-purple-100 hover:from-purple-50 hover:to-white text-purple-600 font-bold rounded-xl shadow-xl shadow-gray-900/40 transition-all duration-300 hover:scale-105 mb-6">
+                                Join Our Instructors
                                 <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
                             </button>
-
-                            {/* Stats */}
-                            <div className="mt-8 pt-8 border-t border-white/20">
-                                <div className="text-center">
-                                    <p className="text-3xl font-bold text-white">100+</p>
-                                    <p className="text-purple-200 text-sm mt-1">Expert Instructors</p>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
 
                 {/* Bottom Stats Section */}
-                <div className="mt-16 sm:mt-20 pt-16 sm:pt-20 border-t border-gray-200">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                        <div className="text-center group">
-                            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 mb-4 group-hover:bg-blue-200 transition-colors">
-                                <Users className="w-6 h-6 text-blue-600" />
-                            </div>
-                            <p className="text-3xl font-bold text-gray-900 mb-1">50K+</p>
-                            <p className="text-gray-600">Active Students</p>
-                        </div>
-                        <div className="text-center group">
-                            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-purple-100 mb-4 group-hover:bg-purple-200 transition-colors">
-                                <BookOpen className="w-6 h-6 text-purple-600" />
-                            </div>
-                            <p className="text-3xl font-bold text-gray-900 mb-1">500+</p>
-                            <p className="text-gray-600">Courses Published</p>
-                        </div>
-                        <div className="text-center group">
-                            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-green-100 mb-4 group-hover:bg-green-200 transition-colors">
-                                <Award className="w-6 h-6 text-green-600" />
-                            </div>
-                            <p className="text-3xl font-bold text-gray-900 mb-1">100+</p>
-                            <p className="text-gray-600">Instructors</p>
-                        </div>
-                        <div className="text-center group">
-                            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-orange-100 mb-4 group-hover:bg-orange-200 transition-colors">
-                                <Zap className="w-6 h-6 text-orange-600" />
-                            </div>
-                            <p className="text-3xl font-bold text-gray-900 mb-1">95%</p>
-                            <p className="text-gray-600">Success Rate</p>
-                        </div>
+                <div className="pt-12 border-t border-white/20">
+                    <div className="text-center mb-12">
+                        <h3 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+                            Trusted by Thousands Worldwide
+                        </h3>
+                        <p className="text-white/80 max-w-2xl mx-auto">
+                            Join a global community of learners and instructors transforming their lives through quality education.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {[
+                            { icon: Users, value: "50K+", label: "Active Students", color: "from-blue-500 to-blue-600" },
+                            { icon: BookOpen, value: "500+", label: "Courses Published", color: "from-purple-500 to-purple-600" },
+                            { icon: Award, value: "100+", label: "Expert Instructors", color: "from-green-500 to-green-600" },
+                            { icon: Zap, value: "95%", label: "Success Rate", color: "from-orange-500 to-orange-600" }
+                        ].map((stat, idx) => {
+                            const IconComponent = stat.icon;
+                            return (
+                                <div key={idx} className="group relative overflow-hidden">
+                                    <div className="relative p-8 text-center ">
+
+                                        <div className="relative z-10">
+                                            <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${stat.color} flex items-center justify-center text-white mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform`}>
+                                                <IconComponent className="w-7 h-7" />
+                                            </div>
+                                            <p className="text-4xl sm:text-5xl font-bold text-white mb-2">{stat.value}</p>
+                                            <p className="text-white/80 font-semibold">{stat.label}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            );
+                        })}
                     </div>
                 </div>
             </div>

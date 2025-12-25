@@ -1,5 +1,10 @@
 import React from 'react';
 import { Calendar, ArrowRight, User } from 'lucide-react';
+import course1 from './../assets/course1.jpg';
+import course2 from './../assets/course2.jpg';
+import course3 from './../assets/course3.jpg';
+import course4 from './../assets/course4.jpg';
+import course5 from './../assets/course5.jpg';
 
 const BlogSection = () => {
     const articles = [
@@ -9,7 +14,7 @@ const BlogSection = () => {
             excerpt: "Discover proven strategies to improve your programming abilities and become a better developer. Learn from industry experts...",
             author: "Sarah Johnson",
             date: "Dec 20, 2024",
-            image: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+            image: course1,
             category: "Development",
             readTime: "5 min read"
         },
@@ -19,7 +24,7 @@ const BlogSection = () => {
             excerpt: "Explore the latest design trends, from minimalism to bold typography. Stay ahead of the curve with these emerging styles...",
             author: "Mike Chen",
             date: "Dec 19, 2024",
-            image: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
+            image: course2,
             category: "Design",
             readTime: "7 min read"
         },
@@ -29,7 +34,7 @@ const BlogSection = () => {
             excerpt: "Planning a career change? This comprehensive guide will help you navigate the transition to a tech career successfully...",
             author: "Emma Wilson",
             date: "Dec 18, 2024",
-            image: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
+            image: course3,
             category: "Career",
             readTime: "8 min read"
         },
@@ -39,7 +44,7 @@ const BlogSection = () => {
             excerpt: "How online education is reshaping the learning landscape. Insights into hybrid learning, AI integration, and student outcomes...",
             author: "David Kumar",
             date: "Dec 17, 2024",
-            image: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)",
+            image: course4,
             category: "Education",
             readTime: "6 min read"
         },
@@ -49,7 +54,7 @@ const BlogSection = () => {
             excerpt: "Effective strategies and tools for managing projects and teams in a distributed environment. Boost productivity and collaboration...",
             author: "Lisa Anderson",
             date: "Dec 16, 2024",
-            image: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)",
+            image: course5,
             category: "Management",
             readTime: "9 min read"
         },
@@ -59,7 +64,7 @@ const BlogSection = () => {
             excerpt: "Strategies to establish yourself as a recognized freelancer in your industry. Create a strong online presence and attract clients...",
             author: "James Mitchell",
             date: "Dec 15, 2024",
-            image: "linear-gradient(135deg, #30cfd0 0%, #330867 100%)",
+            image: course1,
             category: "Freelancing",
             readTime: "10 min read"
         }
@@ -95,36 +100,32 @@ const BlogSection = () => {
                             key={article.id}
                             className="group relative bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl hover:border-blue-200 transition-all duration-300"
                         >
-                            {/* Image Container */}
                             <div className="relative h-48 sm:h-56 overflow-hidden bg-gradient-to-br from-blue-400 to-blue-600">
-                                <div style={{ backgroundImage: article.image }} className="w-full h-full group-hover:scale-110 transition-transform duration-300 opacity-80"></div>
+                                <img
+                                    src={article.image}
+                                    alt={article.title}
+                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                                />
 
-                                {/* Category Badge */}
                                 <div className="absolute top-4 right-4 px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-semibold text-blue-600">
                                     {article.category}
                                 </div>
 
-                                {/* Read Time Badge */}
                                 <div className="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-semibold text-gray-900">
                                     {article.readTime}
                                 </div>
                             </div>
 
-                            {/* Content */}
                             <div className="p-6 sm:p-8 flex flex-col h-full">
-                                {/* Title */}
                                 <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-blue-600 transition-colors">
                                     {article.title}
                                 </h3>
 
-                                {/* Excerpt */}
                                 <p className="text-gray-600 text-sm sm:text-base mb-6 line-clamp-2 flex-grow">
                                     {article.excerpt}
                                 </p>
 
-                                {/* Meta Info */}
                                 <div className="flex flex-col gap-4 pt-6 border-t border-gray-200">
-                                    {/* Author and Date */}
                                     <div className="flex items-center justify-between gap-4">
                                         <div className="flex items-center gap-3">
                                             <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white font-semibold text-sm">

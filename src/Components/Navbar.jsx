@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Search, GraduationCap, LogOut, User, BookMarked } from 'lucide-react';
+import { Menu, X, Search } from 'lucide-react';
 import Logo from '../assets/Logo.png';
-// Navbar Component
-const Navbar = ({ isAuthenticated = false, user = null }) => {
+import { Link } from 'react-router-dom';
+
+const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const [showProfileMenu, setShowProfileMenu] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
 
     useEffect(() => {
@@ -42,12 +42,10 @@ const Navbar = ({ isAuthenticated = false, user = null }) => {
             >
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between h-16 lg:h-20">
-                        {/* Logo */}
                         <div className="flex items-center gap-2 cursor-pointer group">
                             <img className='w-32' src={Logo} alt="Logo" />
                         </div>
 
-                        {/* Desktop Navigation */}
                         <div className="hidden md:flex items-center space-x-8">
                             {navLinks.map((link) => (
                                 <a
@@ -60,9 +58,7 @@ const Navbar = ({ isAuthenticated = false, user = null }) => {
                             ))}
                         </div>
 
-                        {/* Desktop Search & Auth */}
                         <div className="hidden md:flex items-center gap-4">
-                            {/* Search Bar */}
                             <div className="relative">
                                 <input
                                     type="text"
@@ -74,44 +70,14 @@ const Navbar = ({ isAuthenticated = false, user = null }) => {
                                 <Search className="w-4 h-4 text-gray-500 absolute left-3 top-1/2 -translate-y-1/2" />
                             </div>
 
-                            {isAuthenticated ? (
-                                <div className="relative">
-                                    <button
-                                        onClick={() => setShowProfileMenu(!showProfileMenu)}
-                                        className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center text-white font-semibold hover:scale-110 transition-transform shadow-lg"
-                                    >
-                                        {user?.name?.[0] || 'U'}
-                                    </button>
-
-                                    {showProfileMenu && (
-                                        <div className="absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-200 py-2">
-                                            <div className="px-4 py-3 border-b border-gray-200">
-                                                <p className="text-sm font-medium text-gray-900">{user?.name}</p>
-                                                <p className="text-xs text-gray-500">{user?.email}</p>
-                                            </div>
-                                            <button className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors flex items-center gap-2">
-                                                <BookMarked className="w-4 h-4" /> My Courses
-                                            </button>
-                                            <button className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors flex items-center gap-2">
-                                                <User className="w-4 h-4" /> Profile
-                                            </button>
-                                            <hr className="my-2 border-gray-200" />
-                                            <button className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors flex items-center gap-2">
-                                                <LogOut className="w-4 h-4" /> Logout
-                                            </button>
-                                        </div>
-                                    )}
-                                </div>
-                            ) : (
-                                <>
-                                    <button className="px-5 py-2 text-gray-700 hover:text-blue-600 transition-colors font-medium">
-                                        Login
-                                    </button>
-                                    <button className="px-6 py-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-lg font-medium transition-all shadow-lg shadow-blue-600/30">
-                                        Register
-                                    </button>
-                                </>
-                            )}
+                            <div className="relative">
+                                <button className="px-5 py-2 text-gray-700 hover:text-blue-600 transition-colors font-medium">
+                                    Login
+                                </button>
+                                <Link to="/signup" className="px-6 py-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-lg font-medium transition-all shadow-lg shadow-blue-600/30">
+                                    Register
+                                </Link>
+                            </div>
                         </div>
 
                         {/* Mobile Menu Button */}
@@ -140,7 +106,6 @@ const Navbar = ({ isAuthenticated = false, user = null }) => {
                     }`}
             >
                 <div className="flex flex-col h-full">
-                    {/* Drawer Header */}
                     <div className="flex items-center justify-between p-6 border-b border-gray-200 bg-white">
                         <div className="flex items-center gap-2">
                             <img className='w-32' src={Logo} alt="Logo" />
@@ -191,27 +156,13 @@ const Navbar = ({ isAuthenticated = false, user = null }) => {
                         </nav>
                     </div>
 
-                    {/* Drawer Footer */}
                     <div className="p-6 border-t border-gray-200 space-y-3 bg-blue-50">
-                        {isAuthenticated ? (
-                            <>
-                                <button className="w-full py-3 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-lg transition-colors font-medium">
-                                    My Courses
-                                </button>
-                                <button className="w-full py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-lg transition-all shadow-lg shadow-blue-600/20 font-medium">
-                                    Logout
-                                </button>
-                            </>
-                        ) : (
-                            <>
-                                <button className="w-full py-3 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-lg transition-colors font-medium">
-                                    Login
-                                </button>
-                                <button className="w-full py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-lg transition-all shadow-lg shadow-blue-600/20 font-medium">
-                                    Register
-                                </button>
-                            </>
-                        )}
+                        <button className="w-full py-3 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-lg transition-colors font-medium">
+                            Login
+                        </button>
+                        <Link to="/signup" className="w-full py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-lg transition-all shadow-lg shadow-blue-600/20 font-medium">
+                            Register
+                        </Link>
                     </div>
                 </div>
             </div>
