@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X, Search, GraduationCap, LogOut, User, BookMarked } from 'lucide-react';
-
+import Logo from '../assets/Logo.png';
 // Navbar Component
 const Navbar = ({ isAuthenticated = false, user = null }) => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -35,19 +35,16 @@ const Navbar = ({ isAuthenticated = false, user = null }) => {
     return (
         <>
             <nav
-                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-                        ? "bg-white/95 backdrop-blur-md shadow-lg"
-                        : "bg-white"
+                className={`fixed top-0 left-0 right-0 z-50 h-18 transition-all duration-300 ${isScrolled
+                    ? "bg-white shadow-lg"
+                    : "bg-white"
                     }`}
             >
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between h-16 lg:h-20">
                         {/* Logo */}
                         <div className="flex items-center gap-2 cursor-pointer group">
-                            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center transform group-hover:scale-110 transition-transform shadow-lg">
-                                <GraduationCap className="w-6 h-6 text-white" />
-                            </div>
-                            <span className="text-2xl font-bold text-blue-700">EduX</span>
+                            <img className='w-32' src={Logo} alt="Logo" />
                         </div>
 
                         {/* Desktop Navigation */}
@@ -131,8 +128,8 @@ const Navbar = ({ isAuthenticated = false, user = null }) => {
             {/* Mobile Drawer Overlay */}
             <div
                 className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] md:hidden transition-opacity duration-300 ${isMobileMenuOpen
-                        ? "opacity-100 pointer-events-auto"
-                        : "opacity-0 pointer-events-none"
+                    ? "opacity-100 pointer-events-auto"
+                    : "opacity-0 pointer-events-none"
                     }`}
                 onClick={() => setIsMobileMenuOpen(false)}
             />
@@ -144,12 +141,9 @@ const Navbar = ({ isAuthenticated = false, user = null }) => {
             >
                 <div className="flex flex-col h-full">
                     {/* Drawer Header */}
-                    <div className="flex items-center justify-between p-6 border-b border-gray-200 bg-blue-50">
+                    <div className="flex items-center justify-between p-6 border-b border-gray-200 bg-white">
                         <div className="flex items-center gap-2">
-                            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center">
-                                <GraduationCap className="w-6 h-6 text-white" />
-                            </div>
-                            <span className="text-2xl font-bold text-blue-700">EduX</span>
+                            <img className='w-32' src={Logo} alt="Logo" />
                         </div>
                         <button
                             onClick={() => setIsMobileMenuOpen(false)}
