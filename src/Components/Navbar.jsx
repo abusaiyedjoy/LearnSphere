@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Search } from 'lucide-react';
+import { Menu, X, Search, ArrowRight } from 'lucide-react';
 import Logo from '../assets/Logo.png';
 import { Link } from 'react-router-dom';
 
@@ -70,12 +70,14 @@ const Navbar = () => {
                                 <Search className="w-4 h-4 text-gray-500 absolute left-3 top-1/2 -translate-y-1/2" />
                             </div>
 
-                            <div className="relative">
+                            <div className="flex items-center gap-3">
                                 <button className="px-5 py-2 text-gray-700 hover:text-blue-600 transition-colors font-medium">
                                     Login
                                 </button>
-                                <Link to="/signup" className="px-6 py-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-lg font-medium transition-all shadow-lg shadow-blue-600/30">
-                                    Register
+                                <Link to="/signup" className="group flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 hover:from-blue-700 hover:via-blue-600 hover:to-cyan-600 text-white rounded-lg font-semibold transition-all duration-300 relative overflow-hidden">
+                                    <span className="relative z-10">Register</span>
+                                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform relative z-10" />
+                                    <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                                 </Link>
                             </div>
                         </div>
@@ -156,12 +158,14 @@ const Navbar = () => {
                         </nav>
                     </div>
 
-                    <div className="p-6 border-t border-gray-200 space-y-3 bg-blue-50">
+                    <div className="p-6 border-t border-gray-200 space-y-3 bg-gradient-to-b from-blue-50 to-white">
                         <button className="w-full py-3 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-lg transition-colors font-medium">
                             Login
                         </button>
-                        <Link to="/signup" className="w-full py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-lg transition-all shadow-lg shadow-blue-600/20 font-medium">
-                            Register
+                        <Link to="/signup" className="group flex items-center justify-center gap-2 w-full py-3 bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 hover:from-blue-700 hover:via-blue-600 hover:to-cyan-600 text-white rounded-lg transition-all duration-300  relative overflow-hidden">
+                            <span className="relative z-10">Register Now</span>
+                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform relative z-10" />
+                            <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </Link>
                     </div>
                 </div>
